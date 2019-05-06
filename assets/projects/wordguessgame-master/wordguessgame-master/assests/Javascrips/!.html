@@ -1,0 +1,42 @@
+var renderMovieRow = data => { 
+  return `<tr>
+    <td>${data.Title || "n/a"}</td>
+    <td>${data.Year || "n/a"}</td>
+    <td>${data.Actors || "n/a"}</td>
+  </tr>`;
+};
+
+let addMovie = movie => {
+  let queryURL = `https://www.omdbapi.com/?t=${movie}&apikey=trilogy`;
+  if (window.fetch) { // Do feature detection => browser supports fetch
+    fetch(queryURL, {
+      method: "GET"
+    })
+      .then(result => result.json())
+      .then(response => {
+        let template = renderMovieRow(response);
+        document.querySelector(".table").appendChild(template);
+      });
+  } else { // if browser doesn't support fetch
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", queryURL);
+    xhr.onload = event => {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          let response = JSON.parse(xhr.response);
+          let template = renderMovieRow(response);
+          document.querySelector(".table").appendChild(template);
+        } else {
+          console.error(xhr.responseText);
+        }
+      }
+    };
+    xhr.onerror = event => {
+      console.error(xhr.responseText);
+    };
+    xhr.send();
+  }
+};
+
+addMovie("Avengers: Endgame");
+addMovie("Toy Story 4");

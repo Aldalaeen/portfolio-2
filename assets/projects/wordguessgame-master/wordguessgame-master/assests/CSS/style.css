@@ -1,0 +1,21 @@
+
+ p    {color: #EFEFE5;
+      border: 2px solid powderblue;
+      padding: 20px;
+      margin: 8px;
+      width:30%;
+      font-family:Elephant;
+      font-size:22px;
+      }
+ body {
+      background:url(../Images/pic1.jpg); 
+       
+      background-repeat: no-repeat; 
+       background-size: cover;
+ }
+     h1 {
+         color: #ECF4D3;
+     }
+     h3 {
+         color: #CFCED9;
+     }

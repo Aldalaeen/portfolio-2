@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector Game</title>
+    <link rel="stylesheet" href="assets\CSS\style.css">
+</head>
+<body>
+        <!-- jQuery Link-->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="assets/Javascript/game.js"></script>
+
+    <div id="header">
+     <center> <h1>Crystal Collector!</h1></center>
+
+    </div>
+    
+    <div>
+        <p>You will be given a random number at the start of the game. <br />
+       There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.<br />
+        You win the game by matching your total score to the random number generated at the beginning, you lose the game if your total score goes above the random number.<br />
+        The value of each crystal is hidden from you until you click on it.<br />
+        Each time the game starts, the game will change the values of each crystal.</p>
+    </div>
+    <br>
+
+    <div>
+        <h2 id="scoreToMatch">
+            <strong>Your total score should not exceed:</strong>
+        </h2>
+        <p id="wins">Wins: 0</p>
+        <p id="losses">Losses: 0</p>
+    </div>
+    <br>
+  <center> <span>
+        <img id="gem0" src="assets/images/diamond-512.png" alt="Purple" hight="100" width="100">
+        <img id="gem1" src="assets/images/Emerald-512.png" alt="Green" hight="100" width="100">
+        <img id="gem2" src="assets/images/Marquis_diamond-512.png" alt="Pink" hight="100" width="100">
+        <img id="gem3" src="assets/images/Octagonal_Diamond-512.png" alt="Blue" hight="100" width="100">
+    </span>
+      </center>
+   <center><h2 id="score">
+        Score So Far: 0
+    </h2></center>
+
+</body>
+</html>
